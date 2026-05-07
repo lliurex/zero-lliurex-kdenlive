@@ -1,0 +1,3 @@
+llx-kdenlive/kdenlive-env-freeze.list usr/share/doc/llx-kdenlive/
+llx-kdenlive/kdenliverc etc/xdg/
+llx-kdenlive/whispertotext.py usr/share/kdenlive/scripts/whisper/
