@@ -1,0 +1,37 @@
+{
+  "type": "mix",
+  "pkg_list": [
+    {
+      "name": "kdenlive",
+      "key_store": "kdenlive",
+      "custom_name": "Kdenlive video editor",
+      "type": "apt"
+    },
+    {
+      "name": "llx-kdenlive",
+      "key_store": "llx-kdenlive",
+      "custom_name": "Llx AI configuration for Kdenlive video editor",
+      "type": "apt"
+    },
+    {
+      "name": "kdenlive-models",
+      "key_store": "zero-lliurex-ai-models-kdenlive",
+      "custom_name": "Kdenlive AI models",
+      "type": "file"
+    }
+  ],
+  "script": {
+    "name": "/usr/share/zero-lliurex-kdenlive/kdenlive_script",
+    "install": true,
+    "remove": true,
+    "getStatus": true,
+    "download": true
+  },
+  "custom_icon_path": "/usr/share/zero-lliurex-kdenlive/",
+  "zomando": "zero-lliurex-kdenlive",
+  "selection_enabled": {
+    "active": true,
+    "all_selected": true
+  },
+  "check_zomando_state": false
+}

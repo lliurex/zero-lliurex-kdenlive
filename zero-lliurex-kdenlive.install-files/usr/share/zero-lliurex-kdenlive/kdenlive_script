@@ -1,0 +1,39 @@
+#!/bin/bash
+KDENLIVE_MODEL_DIR=/usr/lib/ai/kdenlive_models
+
+THIS_PATH="$( cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+ACTION="$1"
+shift
+PACKAGE_LIST=$@
+
+case $ACTION in
+    getStatus)
+	if [[ " ${PACKAGE_LIST[*]} " == *" kdenlive-models "* ]];then
+	    if [ -d "$KDENLIVE_MODEL_DIR" ];then
+		echo 0
+	    else
+		echo 1
+	    fi
+
+	else
+	    echo "Not Found"
+	fi
+    ;;
+    installPackage)
+	if [[ " ${PACKAGE_LIST[*]} " == *" kdenlive-models "* ]];then
+            epic -u install ai-models.epi kdenlive-models
+	else
+	    echo "Not Found"
+	fi
+    ;;
+    download)
+    ;;
+    remove)
+	if [[ " ${PACKAGE_LIST[*]} " == *" kdenlive-models "* ]];then
+            epic -u uninstall ai-models.epi kdenlive-models
+	else
+	    echo "Not Found"
+	fi
+    ;;	
+esac
+exit 0

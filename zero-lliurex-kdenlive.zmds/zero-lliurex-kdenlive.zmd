@@ -1,0 +1,4 @@
+#!/bin/bash
+
+epi-gtk /usr/share/zero-lliurex-kdenlive/kdenlive.epi
+exit 0
