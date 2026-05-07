@@ -14,7 +14,10 @@ case $ACTION in
 	    else
 		echo 1
 	    fi
-
+	elif [[ " ${PACKAGE_LIST[*]} " == *" kdenlive "* ]];then
+	    [ "$(dpkg-query -W -f='${Status}' kdenlive 2>/dev/null)" = "install ok installed" ] && echo 0 || echo 1
+	elif [[ " ${PACKAGE_LIST[*]} " == *" llx-kdenlive "* ]];then
+	    [ "$(dpkg-query -W -f='${Status}' llx-kdenlive 2>/dev/null)" = "install ok installed" ] && echo 0 || echo 1
 	else
 	    echo "Not Found"
 	fi
@@ -31,6 +34,10 @@ case $ACTION in
     remove)
 	if [[ " ${PACKAGE_LIST[*]} " == *" kdenlive-models "* ]];then
             epic -u uninstall ai-models.epi kdenlive-models
+	elif [[ " ${PACKAGE_LIST[*]} " == *" kdenlive "* ]];then
+	    [ "$(dpkg-query -W -f='${Status}' kdenlive 2>/dev/null)" = "install ok installed" ] && apt-get -y remove kdenlive
+	elif [[ " ${PACKAGE_LIST[*]} " == *" llx-kdenlive "* ]];then
+	    [ "$(dpkg-query -W -f='${Status}' llx-kdenlive 2>/dev/null)" = "install ok installed" ] && apt-get -y remove --purge llx-kdenlive
 	else
 	    echo "Not Found"
 	fi
