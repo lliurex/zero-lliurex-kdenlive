@@ -1,0 +1,37 @@
+Source: llx-kdenlive
+Section: graphics
+Priority: optional
+Maintainer: M.Angel Juan <m.angel.juan@gmail.com>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ zero-dev,
+ llxsrchelper,
+ inkscape
+Standards-Version: 4.6.2
+Homepage: http://lliurex.net
+Vcs-Browser: https://github.com/lliurex
+Vcs-Git: https://github.com/lliurex
+
+Package: llx-kdenlive
+Architecture: any
+Multi-Arch: foreign
+Pre-Depends:
+ kdenlive,
+ kdenlive-data,
+ python3-venv
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ zero-lliurex-ai-models
+Description: Kdenlive AI plugin configurator
+ Configures AI plugins with environment and llx configs
+
+Package: zero-lliurex-kdenlive
+Architecture: any
+Multi-Arch: foreign
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Description: Kdenlive AI plugin configurator zero-center launcher
+ Configures AI plugins with environment and llx configs
