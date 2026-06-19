@@ -19,10 +19,12 @@ REAL_FILE="$DIVERT_FILE.real"
 
 G=14
 REQUIRED_KB=$(( $G * 1024 * 1024 ))
-TARGET_DIR="/usr"
-AVAILABLE_KB=$(df -Pk "$TARGET_DIR" | awk 'NR==2 {print $4}')
+TARGET_DIR="/opt/ai/kdenlive"
+mkdir -p $TARGET_DIR
+AVAILABLE_KB=$(df --output=avail "$TARGET_DIR" | tail -1)
+rmdir $TARGET_DIR 2>/dev/null || true
 
-if [ "$AVAILABLE_KB" -lt "$REQUIRED_KB" -a "$1" != "upgrade" ]; then
+if [[ "$AVAILABLE_KB" -lt "$REQUIRED_KB" -a "$1" != "upgrade" ]; then
     AVAILABLE_GB=$(( AVAILABLE_KB / 1024 / 1024 ))
 
     echo "" >&2
