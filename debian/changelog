@@ -1,3 +1,9 @@
+llx-kdenlive (0.3.1) noble; urgency=medium
+
+  * Minor fixes
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Fri, 19 Jun 2026 20:29:32 +0200
+
 llx-kdenlive (0.3) noble; urgency=medium
 
   * change venv path
