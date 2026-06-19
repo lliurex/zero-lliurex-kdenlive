@@ -1,3 +1,9 @@
+llx-kdenlive (0.3) jammy; urgency=medium
+
+  * Change venv path 
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Fri, 19 Jun 2026 13:45:15 +0200
+
 llx-kdenlive (0.2) jammy; urgency=medium
 
   * Fix uninstall
