@@ -21,7 +21,7 @@ set -e
 PKG="llx-kdenlive"
 DIVERT_FILE="/usr/share/kdenlive/scripts/whisper/whispertotext.py"
 REAL_FILE="$DIVERT_FILE.real"
-VENV_PATH="/usr/lib/kdenlive-venv"
+VENV_PATH="/opt/ai/kdenlive/kdenlive-venv"
 
 case "$1" in
     purge|remove|abort-install|abort-upgrade|disappear)
