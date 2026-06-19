@@ -32,7 +32,12 @@ case "$1" in
         source $VENV_PATH/bin/activate
         "$VENV_PATH/bin/pip" install uv
         "$VENV_PATH/bin/pip" cache purge
+        export UV_CACHE_DIR="$VENV_DIR/uv-cache"
+        export TMPDIR="$VENV_DIR/uv-tmp"
+        mkdir -p "$UV_CACHE_DIR" "$TMPDIR"
         "$VENV_PATH/bin/uv" "pip" install --no-cache -r "$DOC_PATH/$FREEZE_FILE" --override "$DOC_PATH/$CONSTRAINTS_FILE"
+        "$VENV_PATH/bin/uv" cache clean
+        rm -rf "$UV_CACHE_DIR" "$TMPDIR"
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
