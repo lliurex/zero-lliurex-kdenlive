@@ -24,6 +24,7 @@ case "$1" in
         VENV_PATH="$VENV_DIR/kdenlive-venv"
         DOC_PATH="/usr/share/doc/llx-kdenlive"
         FREEZE_FILE="kdenlive-env-freeze.list"
+        CONSTRAINTS_FILE="constraints.txt"
         CFG_FILE="kdenliverc"
 
         mkdir -p $VENV_DIR
@@ -31,7 +32,7 @@ case "$1" in
         source $VENV_PATH/bin/activate
         "$VENV_PATH/bin/pip" install uv
         "$VENV_PATH/bin/pip" cache purge
-        "$VENV_PATH/bin/uv" "pip" install --no-cache -r "$DOC_PATH/$FREEZE_FILE" --override <(echo "networkx<3.3")
+        "$VENV_PATH/bin/uv" "pip" install --no-cache -r "$DOC_PATH/$FREEZE_FILE" --override "$DOC_PATH/$CONSTRAINTS_FILE"
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
