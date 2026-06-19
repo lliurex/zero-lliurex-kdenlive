@@ -84,7 +84,7 @@ mltpath[$e]=/usr/share/mlt-7/profiles
 externalProxyProfile=./;;.LRV;./;;.MP4
 
 [sam][$i]
-samModelFile=/usr/lib/ai/kdenlive_models/sam2/sam2.1_hiera_tiny.pt
+samModelFile=/opt/ai/kdenlive/kdenlive_models/sam2/sam2.1_hiera_tiny.pt
 sam_system_python=true
 sam_system_python_path[$e]=/opt/ai/kdenlive/kdenlive-venv/bin/python3
 

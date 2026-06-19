@@ -1,5 +1,5 @@
 #!/bin/bash
-KDENLIVE_MODEL_DIR=/usr/lib/ai/kdenlive_models
+KDENLIVE_MODEL_DIR=/opt/ai/kdenlive/kdenlive_models
 
 THIS_PATH="$( cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 ACTION="$1"
