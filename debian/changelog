@@ -1,3 +1,9 @@
+llx-kdenlive (0.3.1) jammy; urgency=medium
+
+  * Minor fixes
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Fri, 19 Jun 2026 20:20:49 +0200
+
 llx-kdenlive (0.3) jammy; urgency=medium
 
   * Change venv path 
