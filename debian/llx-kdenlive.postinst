@@ -31,7 +31,7 @@ case "$1" in
         source $VENV_PATH/bin/activate
         "$VENV_PATH/bin/pip" install uv
         "$VENV_PATH/bin/pip" cache purge
-        "$VENV_PATH/bin/uv" "pip" install --no-cache -r "$DOC_PATH/$FREEZE_FILE"
+        "$VENV_PATH/bin/uv" "pip" install --no-cache -r "$DOC_PATH/$FREEZE_FILE" --override <(echo "networkx<3.3")
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
