@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # postinst script for llx-kdenlive.
 #
 # See: dh_installdeb(1).
@@ -28,8 +28,15 @@ case "$1" in
 
         mkdir -p $VENV_DIR
         python3 -m venv $VENV_PATH
+        source $VENV_PATH/bin/activate
+        "$VENV_PATH/bin/pip" install uv
         "$VENV_PATH/bin/pip" cache purge
-        "$VENV_PATH/bin/pip" install --no-cache-dir -r "$DOC_PATH/$FREEZE_FILE"
+        export UV_CACHE_DIR="$VENV_DIR/uv-cache"
+        export TMPDIR="$VENV_DIR/uv-tmp"
+        mkdir -p "$UV_CACHE_DIR" "$TMPDIR"
+        "$VENV_PATH/bin/uv" "pip" install --no-cache -r "$DOC_PATH/$FREEZE_FILE"
+        "$VENV_PATH/bin/uv" cache clean
+        rm -rf "$UV_CACHE_DIR" "$TMPDIR"
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
