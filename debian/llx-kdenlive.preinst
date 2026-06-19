@@ -24,7 +24,7 @@ mkdir -p $TARGET_DIR
 AVAILABLE_KB=$(df --output=avail "$TARGET_DIR" | tail -1)
 rmdir $TARGET_DIR 2>/dev/null || true
 
-if [[ "$AVAILABLE_KB" -lt "$REQUIRED_KB" -a "$1" != "upgrade" ]; then
+if [[ "$AVAILABLE_KB" -lt "$REQUIRED_KB" -a "$1" != "upgrade" ]]; then
     AVAILABLE_GB=$(( AVAILABLE_KB / 1024 / 1024 ))
 
     echo "" >&2
