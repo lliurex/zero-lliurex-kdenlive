@@ -1,3 +1,9 @@
+llx-kdenlive (0.3) noble; urgency=medium
+
+  * change venv path
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Fri, 19 Jun 2026 13:46:24 +0200
+
 llx-kdenlive (0.2) noble; urgency=medium
 
   * Fix uninstall
